@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="quest.css" />
+		<script type = "text/javascript" src="jquery-3.4.1.js"></script>
+		<meta charset="UTF-8">
+
+        <title>Questionnaire</title>
+
+
+
+    </head>
+
+    <body>
+<header><h1>QUIZ</h1>
+
+<div id ="droite">
+
+ <div id="qui">
+
+	 <div id="droite">
+		<button id="close">x</button>
+ 	</div><br/>
+	<span id="gras">NOM :</span> RAKOTOARISOA <br/><br/>
+	<span id="gras">Prénom :</span> Cynthia <br/><br/>
+	<span id="gras">Numéro étudiant :</span> 11901473 <br/><br/>
+	<span id="gras">Navigateur :</span> Chrome
+
+ </div>
+
+ <button id="open">?</button>
+</div>
+
+</header>
+
+<!--
+##########################"PROGRESS BAR############
+-->
+
+<progress id="niv" value="0" max="100"></progress>
+
+<!--
+####################SCORE########################
+-->
+
+<div class="score" >
+	<h2 id="yo">Votre score est de : <span id="score"></span> / 20
+	<div id="nul"><img src="img/sinsad.png" id="comm"></div>
+	<div id="bv"><img src="img/sinhappy.png" id="comm"></div>
+	<div id="tb"><img src="img/sinhourra.png" id="comm"></div>
+
+	</h2>
+
+</div>
+
+<!--
+#####################REPONSES####################
+-->
+
+<div id="centresult"><button id="resultats">VOIR LES REPONSES</button></div>
+
+<div id="results">
+<h2>Réponses :</h2><br/>
+<span id="gras">Q1 :</span> Pascal<br/>
+<span id="gras">Q2 :</span>Paraguay <img src="img/paraguay.png" id="petit"> Russie <img src="img/russie.png" id="petit"> Cuba <img src="img/cuba.png" id="petit"> Luxembourg <img src="img/lux.png" id="petit"> <br/>
+<span id="gras">Q3 :</span> Londres<br/>
+<span id="gras">Q4 :</span> 21<br/>
+<span id="gras">Q5 :</span> <img src ="img/pola.png" id="petit"> <br/>
+<span id="gras">Q6 :</span> Chris Pratt<br/>
+<span id="gras">Q7 :</span> Russe<br/>
+<span id="gras">Q8 :</span> <img src="img/azula.jpg" id="petit"> Azula (Avatar : le dernier maître de l'air)<br/>
+<span id="gras">Q9 :</span> <img src="img/jo.jpg" id="petit"><br/>
+<span id="gras">Q10 :</span> 1990 <img src="img/supernes.png" id="petit">  1998 <img src="img/gameb.png" id="petit"> 2001 <img src="img/gboyadv.png" id="petit" > 2006 <img src="img/dslite.png" id="petit"> fin 2006 <img src="img/wii.png" id="petit" > <br/>
+
+</div>
+
+<!-- ###########################QUESTION 1################### -->
+
+<div id="divq1">
+
+<h2>Question 1 : Qui a dit « Le cœur a ses raisons que la raison ignore » ?</h2>
+<div id="choix">
+<input type="radio" name="q1" value=0 ><label>Casanova</label>
+<input type="radio" name="q1" value=1 ><label>Pascal</label>
+<input type="radio" name="q1" value=0><label>Sénèque</label>
+<input type="radio" name="q1" value=0><label>Baudelaire</label>
+</div>
+
+<div id="choix">
+<input type="button" id="ok1" onclick="modif(10)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 2################### -->
+
+<div id="divq2">
+
+<h2>Question 2 : Relier chaque drapeau à son pays.</h2>
+
+<div id="choix" >
+	<img class="flag" id="cub" src="img/cuba.png" draggable="true" ondragstart="drag(event,'cub')" >
+	<img class="flag" id="par" src="img/paraguay.png" draggable="true" ondragstart="drag(event,'par')">
+	<img class="flag" id="lux" src="img/lux.png" draggable="true" ondragstart="drag(event,'lux')">
+	<img class="flag" id="rus" src="img/russie.png" draggable="true" ondragstart="drag(event,'rus')">
+</div>
+
+</br>
+<div id="div0">
+	<div id="par" class="div1" value="par" ondrop="drop(event)" ondragover="allowDrop(event)">Paraguay</div>
+	<div id="rus" class="div1" value="rus" ondrop="drop(event)" ondragover="allowDrop(event)">Russie</div>
+	<div id="cub" class="div1" value="cub" ondrop="drop(event)" ondragover="allowDrop(event)">Cuba</div>
+	<div id="lux" class="div1" value="lux" ondrop="drop(event)" ondragover="allowDrop(event)">Luxembourg</div>
+</div>
+
+<div id="choix">
+<input type="button" id="ok2" onclick="modif(20)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 3################### -->
+
+<div id="divq3">
+
+<h2>Question 3 : Quelle ville a construit le premier métro ?</h2>
+<div id="choix">
+	<SELECT size="1">
+		<OPTION name="q3" value=0>Paris</OPTION>
+		<OPTION name="q3" value=0>New York</OPTION>
+		<OPTION name="q3" value=0>Tokyo</OPTION>
+		<OPTION name="q3" value=1>Londres</OPTION>
+	</SELECT>
+</div>
+
+<div id="choix">
+<input type="button" id="ok3" onclick="modif(30)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 4################### -->
+
+<div id="divq4">
+
+<h2>Question 4 : A quel âge est-on considéré comme majeur dans le Mississippi (Etats-Unis) ?</h2>
+<div id="choix"> <input type="text" id="q4" value="" > </div>
+
+<div id="choix">
+<input type="button" id="ok4" onclick="modif(40)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 5################### -->
+
+<div id="divq5">
+
+<h2>Question 5 : Quel produit n'est pas vendu par Apple ?</h2>
+<div id="choix">
+
+	<label>
+		<input type="radio" name="q5" value=0><img src ="img/imac.png" class="apple">
+	</label>
+	<label>
+		<input type="radio" name="q5" value=0><img src ="img/ipad.png" class="apple">
+	</label>
+	<label>
+		<input type="radio" name="q5" value=1 ><img src ="img/pola.png" class="apple">
+	</label>
+	<label>
+		<input type="radio" name="q5" value=0 ><img src ="img/applewatch.png" class="apple">
+	</label>
+</div>
+
+<div id="choix">
+<input type="button" id="ok5" onclick="modif(50)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 6################### -->
+
+<div id="divq6">
+
+<h2>Question 6 : Qui est cet acteur en train de danser sur Come and Get Your Love ? </h2>
+<div id="choix">	(indice : Gardiens de la Galaxie) </div>
+
+<div id="choix">
+
+	<video id="comeget" src="img/comegetyourlove.mp4" type="video/mp4" controls>
+</div>
+<div id="choix"> <input type="text" id="q6"> </div>
+
+<div id="choix">
+<input type="button" id="ok6" onclick="modif(60)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 7################### -->
+
+<div id="divq7">
+
+<h2>Question 7 : Quelle est la langue parlée ?</h2>
+<div id="choix">
+	<audio src="img/tuto.mp3" controls/>
+</div>
+
+<div id="choix">
+	<input type="radio" value=1 name="q7">Russe
+	<input type="radio" value=0 name="q7">Roumain
+	<input type="radio" value=0 name="q7">Portugais
+	<input type="radio" value=0 name="q7">Polonais
+</div>
+
+<div id="choix">
+<input type="button" id="ok7" onclick="modif(70)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 8################### -->
+
+<div id="divq8">
+
+<h2>Question 8 : Lequel n'est pas japonais ?</h2>
+
+<div id="choix">
+	<label>
+		<input type="radio" value=0 name="q8"><img src="img/tghoul.png" class="anime"></button>
+	</label>
+	<label>
+		<input type="radio" value=0 name="q8"><img src="img/punpun.jpg" class="anime"/>
+	</label>
+	<label>
+		<input type="radio" value=0 name="q8"><img src="img/devilman.jpg" class="anime">
+	</label>
+	<label>
+		<input type="radio" value=1 name="q8"><img src="img/azula.jpg" class="anime"/>
+	</label>
+</div>
+
+<div id="choix">
+<input id="ok8" type="button" onclick="modif(80)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 9################### -->
+
+<div id="divq9">
+
+<h2>Question 9 : De quelles couleurs sont les anneaux olympiques ?</h2>
+
+<div id="choix">
+  <div id="hi" class="olympic">
+		<div id="bleu" class="rings blue" value=0></div>
+		<div id="jaune" class="rings yellow" value=0></div>
+		<div id="noir" class="rings black" value=0></div>
+		<div id="vert" class="rings green" value=0></div>
+		<div id="rouge" class="rings red" value=0></div>
+
+	</div>
+</div>
+
+<div id="choix">
+<input id="cercle1" type="button" >
+<input id="cercle2" type="button" >
+<input id="cercle3" type="button" >
+<input id="cercle4" type="button" >
+<input id="cercle5" type="button">
+</div>
+
+<div id="choix">
+<input type="button" id="ok9" onclick="modif(90)" value="OK">
+</div>
+
+</div>
+
+<!-- ###########################QUESTION 10################### -->
+
+<div id="divq10">
+
+<h2>Question 10 : Classer ces consoles Nintendo par ordre chronologique.</h2>
+
+<div id="choix">
+
+<div id="chrono" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<img class="nin" id="ds" src="img/dslite.png" draggable="true" ondragstart="drag(event,'ds')"/>
+	<img class="nin" id="sup" src="img/supernes.png" draggable="true" ondragstart="drag(event,'sup')"/>
+	<img class="nin" id="gam" src="img/gameb.png" draggable="true" ondragstart="drag(event,'gam')"/>
+	<img class="nin" id="wii" src="img/wii.png" draggable="true" ondragstart="drag(event,'wii')"/>
+	<img class="nin" id="gboy" src="img/gboyadv.png" draggable="true" ondragstart="drag(event,'gboy')"/>
+</div>
+
+</div>
+
+<div id="choix">
+	<div id="chrono">
+	<div id="sup" class="chrono" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="gam" class="chrono" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="gboy" class="chrono" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="ds" class="chrono" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<div id="wii" class="chrono" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	</div>
+</div>
+
+<div id="choix">
+<input id="ok10" type="button" onclick="modif(100)" value="OK">
+</div>
+
+</div>
+
+
+
+    <script>
+
+
+
+//~ ############################HIDE/SHOW######################
+
+$(document).ready(function(){
+	$("#qui").hide();
+	$("#results").hide();
+	$("#resultats").hide();
+});
+
+$('#resultats').on("click",function(){
+	$("#results").show();
+});
+
+$('#open').on("click",function(){
+	$("#qui").show();
+});
+
+$('#close').on("click",function(){
+	$("#qui").hide();
+});
+
+$(document).ready(function(){
+	$("#divq2").hide();
+	$("#divq3").hide();
+	$("#divq4").hide();
+	$("#divq5").hide();
+	$("#divq6").hide();
+	$("#divq7").hide();
+	$("#divq8").hide();
+	$("#divq9").hide();
+	$("#divq10").hide();
+	$(".score").hide();
+});
+//~
+$('#ok1').on("click",function(){
+	$("#divq2").show();
+	$("#divq1").hide();
+});
+//~
+$('#ok2').on("click",function(){
+	$("#divq3").show();
+	$("#divq2").hide();
+});
+//~
+$('#ok3').on("click",function(){
+	$("#divq4").show();
+	$("#divq3").hide();
+});
+//~
+$('#ok4').on("click",function(){
+	$("#divq5").show();
+	$("#divq4").hide();
+});
+//~
+$('#ok5').on("click",function(){
+	$("#divq6").show();
+	$("#divq5").hide();
+});
+//~
+$('#ok6').on("click",function(){
+	$("#divq7").show();
+	$("#divq6").hide();
+});
+//~
+$('#ok7').on("click",function(){
+	$("#divq8").show();
+	$("#divq7").hide();
+});
+//~
+$('#ok8').on("click",function(){
+	$("#divq9").show();
+	$("#divq8").hide();
+});
+//~
+$('#ok9').on("click",function(){
+	$("#divq10").show();
+	$("#divq9").hide();
+});
+//~
+$('#ok10').on("click",function(){
+	$(".score").show();
+	$("#resultats").show();
+	$("#divq10").hide();
+});
+
+
+//~ #############################VARIABLES###########################
+
+			var score = 0;
+
+			var rep = ['21','chris pratt'];
+
+			var flag0 = false;
+			var flag1 = false;
+			var flag2 = false;
+			var flag3 = false;
+			var flag4 = false;
+
+//~ ##########################SCORE INPUT##############################
+
+			$('#ok1').on("click",function(){
+				user = $('input[name=q1]:checked').val();
+				if (user == 1) {
+					score+=1;
+				}
+				$("#score").text(score);
+			});
+
+
+			$('#ok3').on("click",function(){
+				user = $('option[name=q3]:checked').val();
+				if (user == 1) {
+					score=score+1;
+				}
+				$("#score").text(score);
+			});
+
+			$('#ok4').on("click",function(){
+				var user = $('#q4').val();
+				if (user == rep[0]) {
+					score+=1;
+				}
+				$("#score").text(score);
+			});
+
+			$('#ok5').on("click",function(){
+				var user = $('input[name=q5]:checked').val();
+				if (user == 1) {
+					score+=1;
+				}
+				$("#score").text(score);
+			});
+
+			$('#ok6').on("click",function(){
+				var user = $('#q6').val();
+				if (user == rep[1]) {
+					score+=1;
+				}
+				$("#score").text(score);
+			});
+
+			$('#ok7').on("click",function(){
+				var user = $('input[name=q7]:checked').val();
+				if (user == 1) {
+					score+=1;
+				}
+				$("#score").text(score);
+			});
+
+			$('#ok8').on("click",function(){
+				var user = $('input[name=q8]:checked').val();
+				if (user == 1) {
+					score+=1;
+				}
+				$("#score").text(score);
+			});
+
+
+
+
+
+//~ #####################PROGRESS BAR########################"
+
+			 function modif(x) {
+
+				 $("#niv").attr("value",x);
+
+			 }
+
+
+//~ ##########################CERCLES JO#############################
+
+		var couleurs=['#0085c7','#f4c300','#000000','#009f3d','#df0024'];
+
+			$("input#cercle1").on("click",function(){
+
+				var c=parseInt($("#bleu").attr("value"));
+				c=c+1;
+				if (c>5) {
+					c=0;
+				}
+				$("#bleu").attr("value",c);
+				$("#bleu").css('color',couleurs[c]);
+
+
+				if (c == 0) {
+					flag0 = true;
+				}else {
+					flag0 = false;
+				}
+
+
+			});
+
+
+			$("input#cercle2").on("click",function(){
+
+				var c=parseInt($("#jaune").attr("value"));
+				c=c+1;
+				if (c>5) {
+					c=0;
+				}
+				$("#jaune").attr("value",c);
+				$("#jaune").css('color',couleurs[c]);
+
+				if (c == 1) {
+					flag1 = true;
+				}else {
+					flag1 = false;
+				}
+			});
+
+
+			$("input#cercle3").on("click",function(){
+
+				var c=parseInt($("#noir").attr("value"));
+				c=c+1;
+				if (c>5) {
+					c=0;
+				}
+				$("#noir").attr("value",c);
+				$("#noir").css('color',couleurs[c]);
+
+				if (c == 2) {
+					flag2 = true;
+				}else {
+					flag2 = false;
+				}
+			});
+
+			$("input#cercle4").on("click",function(){
+
+				var c=parseInt($("#vert").attr("value"));
+				c=c+1;
+				if (c>5) {
+					c=0;
+				}
+				$("#vert").attr("value",c);
+				$("#vert").css('color',couleurs[c]);
+
+				if (c == 3) {
+					flag3 = true;
+				}else {
+					flag3 = false;
+				}
+			});
+
+
+			$("input#cercle5").on("click",function(){
+
+				var c=parseInt($("#rouge").attr("value"));
+				c=c+1;
+				if (c>5) {
+					c=0;
+				}
+				$("#rouge").attr("value",c);
+				$("#rouge").css('color',couleurs[c]);
+
+				if (c == 4) {
+					flag4 = true;
+				}else {
+					flag4 = false;
+				}
+			});
+
+
+			$('#ok9').on("click",function(){
+				if (flag0) {
+					score+=1;
+				}
+				if (flag1) {
+					score+=1;
+				}
+				if (flag2) {
+					score+=1;
+				}
+				if (flag3) {
+					score+=1;
+				}
+				if (flag4) {
+					score+=1;
+				}
+				$("#score").text(score);
+				});
+
+//~ ##########################DRAG&DROP#####################################
+
+			var iddrag;
+
+			function allowDrop(ev) {
+				ev.preventDefault();
+			}
+
+			function drag(ev,id) {
+				ev.dataTransfer.setData("text", ev.target.id);
+				iddrag=id;
+			}
+
+			function drop(ev) {
+				ev.preventDefault();
+				var data = ev.dataTransfer.getData("text");
+				ev.target.appendChild(document.getElementById(data));
+
+				var pays = $(ev.target).attr("id");
+				if (pays == iddrag){
+					score+=1;
+				}
+				$("#score").text(score);
+
+
+			}
+
+//~ #############################REACTIONS########
+
+	$(document).ready(function(){
+		$("#nul").hide();
+		$("#bv").hide();
+		$("#tb").hide();
+	});
+
+	$('#ok10').on("click",function(){
+		if (score < 10){
+			$("#nul").show();
+			$("#bv").hide();
+			$("#tb").hide();
+		}
+		else if ((score >= 10) && (score < 15)){
+			$("#nul").hide();
+			$("#bv").show();
+			$("#tb").hide();
+		}
+		else if (score >= 15){
+			$("#nul").hide();
+			$("#bv").hide();
+			$("#tb").show();
+		}
+	});
+
+
+
+		</script>
+		</body>
+
+</html>
